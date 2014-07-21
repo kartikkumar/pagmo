@@ -24,7 +24,7 @@
 # Free Software Foundation, Inc.,
 # 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #
-# This script tries to find the PaGMO library. This module supports requiring a minimum 
+# This script tries to find the PaGMO library. This module supports requiring a minimum
 # version, e.g. you can do version, e.g. you can do find_package(PaGMO 1.1.5) to require
 # version 1.1.5 or newer of PaGMO.
 #
@@ -34,7 +34,7 @@
 #     PAGMO_INCLUDE_DIR   - the PaGMO include directory;
 #     PAGMO_LIBRARY_DIR   - the PaGMO directory containing the library file(s);
 #
-# This script is based off of FindEigen3.cmake, which states that redistribution and use is 
+# This script is based off of FindEigen3.cmake, which states that redistribution and use is
 # allowed according to the terms of the 2-clause BSD license.
 
 macro(_pagmo_check_version)
@@ -43,9 +43,9 @@ macro(_pagmo_check_version)
   string(REGEX MATCH "define[ \t]+PAGMO_VERSION_MAJOR[ \t]+([0-9]+)" _pagmo_major_version_match "${_pagmo_header}")
   set(PAGMO_MAJOR_VERSION "${CMAKE_MATCH_1}")
   string(REGEX MATCH "define[ \t]+PAGMO_VERSION_MINOR[ \t]+([0-9]+)" _pagmo_minor_version_match "${_pagmo_header}")
-  set(PAGMO_MINOR_VERSION "${CMAKE_MATCH_1}")  
+  set(PAGMO_MINOR_VERSION "${CMAKE_MATCH_1}")
   string(REGEX MATCH "define[ \t]+PAGMO_VERSION_PATCH[ \t]+([0-9]+)" _pagmo_patch_version_match "${_pagmo_header}")
-  set(PAGMO_PATCH_VERSION "${CMAKE_MATCH_1}")  
+  set(PAGMO_PATCH_VERSION "${CMAKE_MATCH_1}")
 
   set(PAGMO_VERSION ${PAGMO_MAJOR_VERSION}.${PAGMO_MINOR_VERSION}.${PAGMO_PATCH_VERSION})
   if(${PAGMO_VERSION} VERSION_LESS ${PaGMO_FIND_VERSION})
@@ -76,7 +76,7 @@ else (PAGMO_INCLUDE_DIR)
       ${PROJECT_SOURCE_DIR}/../../pagmo
       ${PROJECT_SOURCE_DIR}/../../../pagmo
       ${PROJECT_SOURCE_DIR}/../../../../pagmo
-      PATH_SUFFIXES pagmo 
+      PATH_SUFFIXES pagmo
     )
   set(PAGMO_INCLUDE_DIR ${PAGMO_BASE_PATH}/src/)
   set(PAGMO_LIBRARY_DIR ${PAGMO_BASE_PATH}/build/src/)
